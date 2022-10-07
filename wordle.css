@@ -29,12 +29,14 @@ body {
 }
 
 .square.correct {
-    background-color: #076325;
+    background-color: #00852c;
 }
 .square.misplaced {
     background-color: #f5c423;
 }
-
+.square.guessed {
+    background-color: #3b3b3b;
+}
 .keyboard {
     display: flex;
     flex-direction: column;

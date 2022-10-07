@@ -1,4 +1,4 @@
-let word = ['E', 'A', 'R', 'T', 'H'];   // The solution to the Wordle
+let word = ['D', 'A', 'N', 'D', 'Y'];   // The solution to the Wordle
 
 let currentGuess = [];
 let currentRow = 1;
@@ -23,7 +23,7 @@ function deleteLetter() {
         // If there are any letters to delete
 
         letterIndex = currentGuess.length;
-        currentGuess.pop();
+        currentGuess.pop(); n
         squareID = "boardrow" + currentRow + "square" + letterIndex;
         document.getElementById(squareID).innerHTML = "";
     }
@@ -41,6 +41,8 @@ function submitGuess() {
             } else if (word.includes(squareValue)) {
                 // Misplaced letter
                 document.getElementById(squareID).setAttribute("class", "square misplaced");
+            } else {
+                document.getElementById(squareID).setAttribute("class", "square guessed");
             }
         }
         currentRow++;   // Begins guessing the next row

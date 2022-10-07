@@ -30,12 +30,14 @@ body {
 
 .square.correct {
     background-color: #00852c;
+    animation-name: flip;
+    animation-duration: 0.5s;
 }
 .square.misplaced {
     background-color: #f5c423;
 }
 .square.guessed {
-    background-color: #3b3b3b;
+    background-color: #6b6b6b;
 }
 .keyboard {
     display: flex;
@@ -52,21 +54,41 @@ body {
 .keyboard .row .key{
     color: #1d1d1d;
     background-color: grey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 50px;
     height: 55px;
-    font-size: 40px;
+    font-size: 35px;
     font-weight: bold;
-    text-align: center;
     border-radius: 5px;
     margin: 2px;
     cursor: pointer;
 }
-
-#keyboardrow3enter {
-    background-color: #15688f;
+.keyboard .row .key:active {
+    background-color: darkgrey;
 }
-#keyboardrow3delete {
+
+#keyboardrow4enter {
+    background-color: #15688f;
+    font-weight: bolder;
+}
+#keyboardrow4enter:active {
+    background-color: #1980af;
+}
+#keyboardrow4delete {
     background-color: #b9492d;
+}
+#keyboardrow4delete:active {
+    background-color: #e45835;
+}
+#keyboardrow4reload {
+    text-decoration: none;
+    background-color: #1c9261;
+    font-weight: bolder;
+}
+#keyboardrow4reload:active {
+    background-color: #29c785;
 }
 .attribution {
     position: fixed;

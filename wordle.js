@@ -1,4 +1,13 @@
-let word = ['D', 'A', 'N', 'D', 'Y'];   // The solution to the Wordle
+let possible_words = data;
+let word_index = Math.floor(Math.random() * (possible_words.length + 1));
+let entire_word = possible_words[word_index];
+let word = [];
+
+for (let letter of entire_word) {
+    word.push(letter);
+}
+
+console.log(word);
 
 let currentGuess = [];
 let currentRow = 1;
@@ -23,7 +32,7 @@ function deleteLetter() {
         // If there are any letters to delete
 
         letterIndex = currentGuess.length;
-        currentGuess.pop(); n
+        currentGuess.pop();
         squareID = "boardrow" + currentRow + "square" + letterIndex;
         document.getElementById(squareID).innerHTML = "";
     }

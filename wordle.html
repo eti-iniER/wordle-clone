@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="wordle.css">
+    <script type="text/javascript" src="wordle_words.js"></script>
     <script src="wordle.js"></script>
     <title>Wordle Clone</title>
 </head>
@@ -87,8 +88,11 @@
             <div class="key" id="keyboardrow3key5" onclick="writeLetter('B')">B</div>
             <div class="key" id="keyboardrow3key6" onclick="writeLetter('N')">N</div>
             <div class="key" id="keyboardrow3key7" onclick="writeLetter('M')">M</div>
-            <div class="key" id="keyboardrow3delete" onclick="deleteLetter()">◄</div>
-            <div class="key" id="keyboardrow3enter" onclick="submitGuess()">Σ</div>
+        </div>
+        <div class="row" id="keyboardrow4">
+            <div class="key" id="keyboardrow4delete" onclick="deleteLetter()">◀</div>
+            <div class="key" id="keyboardrow4enter" onclick="submitGuess()">↵</div>
+            <a class="key" id="keyboardrow4reload" href="wordle.html">⟳</a>
         </div>
     </div>
     <div class="attribution">

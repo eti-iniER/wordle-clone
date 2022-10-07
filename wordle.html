@@ -11,83 +11,84 @@
 <body>
     <div class="board">
         <div class="row" id="boardrow1">
-            <div class="square correct">E</div>
-            <div class="square misplaced">A</div>
-            <div class="square">R</div>
-            <div class="square">T</div>
-            <div class="square">H</div>
+            <div class="square" id="boardrow1square1"></div>
+            <div class="square" id="boardrow1square2"></div>
+            <div class="square" id="boardrow1square3"></div>
+            <div class="square" id="boardrow1square4"></div>
+            <div class="square" id="boardrow1square5"></div>
         </div>
         <div class="row" id="boardrow2">
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
+            <div class="square" id="boardrow2square1"></div>
+            <div class="square" id="boardrow2square2"></div>
+            <div class="square" id="boardrow2square3"></div>
+            <div class="square" id="boardrow2square4"></div>
+            <div class="square" id="boardrow2square5"></div>
         </div>
         <div class="row" id="boardrow3">
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
+            <div class="square" id="boardrow3square1"></div>
+            <div class="square" id="boardrow3square2"></div>
+            <div class="square" id="boardrow3square3"></div>
+            <div class="square" id="boardrow3square4"></div>
+            <div class="square" id="boardrow3square5"></div>
         </div>
         <div class="row" id="boardrow4">
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
+            <div class="square" id="boardrow4square1"></div>
+            <div class="square" id="boardrow4square2"></div>
+            <div class="square" id="boardrow4square3"></div>
+            <div class="square" id="boardrow4square4"></div>
+            <div class="square" id="boardrow4square5"></div>
         </div>
         <div class="row" id="boardrow5">
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
+            <div class="square" id="boardrow5square1"></div>
+            <div class="square" id="boardrow5square2"></div>
+            <div class="square" id="boardrow5square3"></div>
+            <div class="square" id="boardrow5square4"></div>
+            <div class="square" id="boardrow5square5"></div>
         </div>
         <div class="row" id="boardrow6">
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
+            <div class="square" id="boardrow6square1"></div>
+            <div class="square" id="boardrow6square2"></div>
+            <div class="square" id="boardrow6square3"></div>
+            <div class="square" id="boardrow6square4"></div>
+            <div class="square" id="boardrow6square5"></div>
         </div>
     </div>
     <div class="keyboard">
         <div class="row" id="keyboardrow1">
-            <div class="key" id="keyboardrow1key1">Q</div>
-            <div class="key" id="keyboardrow1key2">W</div>
-            <div class="key" id="keyboardrow1key3">E</div>
-            <div class="key" id="keyboardrow1key4">R</div>
-            <div class="key" id="keyboardrow1key5">T</div>
-            <div class="key" id="keyboardrow1key6">Y</div>
-            <div class="key" id="keyboardrow1key7">U</div>
-            <div class="key" id="keyboardrow1key8">I</div>
-            <div class="key" id="keyboardrow1key9">O</div>
-            <div class="key" id="keyboardrow1key10">P</div>
+            <div class="key" id="keyboardrow1key1" onclick="writeLetter('Q')">Q</div>
+            <div class="key" id="keyboardrow1key2" onclick="writeLetter('W')">W</div>
+            <div class="key" id="keyboardrow1key3" onclick="writeLetter('E')">E</div>
+            <div class="key" id="keyboardrow1key4" onclick="writeLetter('R')">R</div>
+            <div class="key" id="keyboardrow1key5" onclick="writeLetter('T')">T</div>
+            <div class="key" id="keyboardrow1key6" onclick="writeLetter('Y')">Y</div>
+            <div class="key" id="keyboardrow1key7" onclick="writeLetter('U')">U</div>
+            <div class="key" id="keyboardrow1key8" onclick="writeLetter('I')">I</div>
+            <div class="key" id="keyboardrow1key9" onclick="writeLetter('O')">O</div>
+            <div class="key" id="keyboardrow1key10" onclick="writeLetter('P')">P</div>
         </div>
 
         <div class="row" id="keyboardrow2">
-            <div class="key" id="keyboardrow2key1">A</div>
-            <div class="key" id="keyboardrow2key2">S</div>
-            <div class="key" id="keyboardrow2key3">D</div>
-            <div class="key" id="keyboardrow2key4">F</div>
-            <div class="key" id="keyboardrow2key5">G</div>
-            <div class="key" id="keyboardrow2key6">H</div>
-            <div class="key" id="keyboardrow2key7">J</div>
-            <div class="key" id="keyboardrow2key8">K</div>
-            <div class="key" id="keyboardrow2key9">L</div>
+            <div class="key" id="keyboardrow2key1" onclick="writeLetter('A')">A</div>
+            <div class="key" id="keyboardrow2key2" onclick="writeLetter('S')">S</div>
+            <div class="key" id="keyboardrow2key3" onclick="writeLetter('D')">D</div>
+            <div class="key" id="keyboardrow2key4" onclick="writeLetter('F')">F</div>
+            <div class="key" id="keyboardrow2key5" onclick="writeLetter('G')">G</div>
+            <div class="key" id="keyboardrow2key6" onclick="writeLetter('H')">H</div>
+            <div class="key" id="keyboardrow2key7" onclick="writeLetter('J')">J</div>
+            <div class="key" id="keyboardrow2key8" onclick="writeLetter('K')">K</div>
+            <div class="key" id="keyboardrow2key9" onclick="writeLetter('L')">L</div>
         </div>
 
         <div class="row" id="keyboardrow3">
-            <div class="key" id="keyboardrow3key1">Z</div>
-            <div class="key" id="keyboardrow3key2">X</div>
-            <div class="key" id="keyboardrow3key3">C</div>
-            <div class="key" id="keyboardrow3key4">V</div>
-            <div class="key" id="keyboardrow3key5">B</div>
-            <div class="key" id="keyboardrow3key6">N</div>
-            <div class="key" id="keyboardrow3key7">M</div>
-            <div class="key" id="keyboardrow3delete">◄</div>
+            <div class="key" id="keyboardrow3key1" onclick="writeLetter('Z')">Z</div>
+            <div class="key" id="keyboardrow3key2" onclick="writeLetter('X')">X</div>
+            <div class="key" id="keyboardrow3key3" onclick="writeLetter('C')">C</div>
+            <div class="key" id="keyboardrow3key4" onclick="writeLetter('V')">V</div>
+            <div class="key" id="keyboardrow3key5" onclick="writeLetter('B')">B</div>
+            <div class="key" id="keyboardrow3key6" onclick="writeLetter('N')">N</div>
+            <div class="key" id="keyboardrow3key7" onclick="writeLetter('M')">M</div>
+            <div class="key" id="keyboardrow3delete" onclick="deleteLetter()">◄</div>
+            <div class="key" id="keyboardrow3enter" onclick="submitGuess()">Σ</div>
         </div>
     </div>
 </body>

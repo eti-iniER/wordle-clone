@@ -26,20 +26,21 @@ body {
     font-size: 35px;
     font-weight: bold;
     color: white;
-    cursor: pointer;
 }
 
 .square.correct {
     background-color: #076325;
 }
 .square.misplaced {
-    background-color: #f5d523;
+    background-color: #f5c423;
 }
 
 .keyboard {
     display: flex;
     flex-direction: column;
     margin-top: 50px;
+    cursor: pointer;
+    user-select: none;
 }
 .keyboard .row {
     display: flex;
@@ -56,4 +57,12 @@ body {
     text-align: center;
     border-radius: 5px;
     margin: 2px;
+    cursor: pointer;
+}
+
+#keyboardrow3enter {
+    background-color: #15688f;
+}
+#keyboardrow3delete {
+    background-color: #b9492d;
 }

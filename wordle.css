@@ -5,7 +5,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 0px
+    margin: 0px;
 }
 
 .board {
@@ -65,4 +65,12 @@ body {
 }
 #keyboardrow3delete {
     background-color: #b9492d;
+}
+.attribution {
+    position: fixed;
+    color: lightgrey;
+    bottom: 20px;
+    right: 20px;
+    width: fit-content;
+    line-height: 5px;
 }

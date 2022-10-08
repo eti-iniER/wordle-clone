@@ -1,12 +1,10 @@
 let possible_words = data;
 let word_index = Math.floor(Math.random() * (possible_words.length + 1));
 let entire_word = possible_words[word_index];
-let word = [];
+let word = Array.from(entire_word);
 let userHasGuessedCorrectly = false;
 LETTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-for (let letter of entire_word) {
-    word.push(letter);
-}
+
 
 window.addEventListener("keydown", event => {
     if (event.key == "Enter") {
@@ -19,7 +17,7 @@ window.addEventListener("keydown", event => {
         writeLetter(event.key.toUpperCase());
     }
 })
-console.log(word);
+console.log(entire_word);
 
 let currentGuess = [];
 let currentRow = 1;
@@ -53,6 +51,9 @@ function deleteLetter() {
     }
 }
 function submitGuess() {
+    if (userHasGuessedCorrectly == true) {
+        return;
+    }
     if (currentGuess.length == 5) {
         // Checks if the user has guessed a full word
         let guessedWord = "";
@@ -103,8 +104,8 @@ function showAlert(alertID, alertTextID, alertMessage) {
     messageText.innerHTML = alertMessage;
     message.style.display = "flex";
     message.style.animationName = "slide-down";
-    setInterval(() => {message.style.animationName = "slide-up";}, 1000);
-    setInterval(() => {message.style.display = "none";}, 1500);
+    setInterval(() => {message.style.animationName = "slide-up";}, 1500);
+    setInterval(() => {message.style.display = "none";}, 2000);
 }
 
 function endGame() {

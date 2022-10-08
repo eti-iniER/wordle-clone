@@ -98,3 +98,33 @@ body {
     width: fit-content;
     line-height: 5px;
 }
+#alert {
+    display: none;
+    position: absolute;
+    top: 30px;
+    margin: auto;
+    background-color: #326335bd;
+    align-items: center;
+    width: max-content;
+    height: 30px;
+    padding: 20px;
+    border-radius: 10px;
+    animation-name: none;
+    animation-timing-function: ease-in;
+    animation-duration: 0.5s;
+}
+
+@keyframes slide-down {
+    from {top: -50px};
+    to {top: 30px;}
+}
+
+@keyframes slide-up {
+    from {top: 30px;}
+    to {top: -50px;}
+}
+
+#alert-text {
+    font-weight: bold;
+    color: whitesmoke;
+}

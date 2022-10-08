@@ -14,7 +14,7 @@ let currentRow = 1;
 
 function writeLetter(letter) {
     /* Each letter key in the HTML page passes itself as a value to this function */
-    if (currentRow <= 6) {
+    if (currentRow < 7) {
         // If there are still blank guesses remaining
         if (currentGuess.length != 5) {
             // If user has not guessed up to five letters
@@ -56,5 +56,18 @@ function submitGuess() {
         }
         currentRow++;   // Begins guessing the next row
         currentGuess = [];
+        if (currentRow == 7) {
+            showWord();
+        }
     }
+}
+
+function showWord() {
+    message = document.getElementById("alert");
+    messageText = document.getElementById("alert-text");
+    messageText.innerHTML = entire_word;
+    message.style.display = "flex";
+    message.style.animationName = "slide-down";
+    setInterval(() => {message.style.animationName = "slide-up";}, 1500);
+    setInterval(() => {message.style.display = "none";}, 1900);
 }

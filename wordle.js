@@ -26,7 +26,10 @@ let currentRow = 1;
 
 function writeLetter(letter) {
     /* Each letter key in the HTML page passes itself as a value to this function */
-    if (currentRow < 7 && userHasGuessedCorrectly == false) {
+    if (currentRow < 7) {
+        if (userHasGuessedCorrectly == true) {
+            return;
+        }
         // If there are still blank guesses remaining
         if (currentGuess.length < 5) {
             // If user has not guessed up to five letters
@@ -51,12 +54,18 @@ function deleteLetter() {
 }
 function submitGuess() {
     if (currentGuess.length == 5) {
-        if (currentGuess == word) {
-            userHasGuessedCorrectly = true;
-            endGame();
-            return;
-        }
         // Checks if the user has guessed a full word
+        let guessedWord = "";
+        for (letter of currentGuess) {
+            // Helper loop to form guess array into strings
+            guessedWord += letter;
+        }
+        console.log(guessedWord);
+        // if (!possible_words.includes(guessedWord)) {
+        //     // check if word is valid
+        //     showAlert("alert-fake-word", "alert-fake-word-text", "That word isn't real!");
+        //     return;
+        // }
         for (let i=1; i < 6; i++) {
             // Iterates over all the squares in a guess row
             squareID = "boardrow" + currentRow + "square" + i;
@@ -72,10 +81,15 @@ function submitGuess() {
             }
         }
         currentRow++;   // Begins guessing the next row
+        if (currentGuess.toString() == word.toString()) {
+            // Check if player has won the game
+            endGame();
+            return;
+        }
         currentGuess = [];
         if (currentRow == 7) {
             if (userHasGuessedCorrectly == false) {
-                showWord();
+                showAlert("alert-answer", "alert-answer-text", entire_word);
             } else {
                 endGame();
             }
@@ -83,16 +97,17 @@ function submitGuess() {
     }
 }
 
-function showWord() {
-    message = document.getElementById("alert");
-    messageText = document.getElementById("alert-text");
-    messageText.innerHTML = entire_word;
+function showAlert(alertID, alertTextID, alertMessage) {
+    message = document.getElementById(alertID);
+    messageText = document.getElementById(alertTextID);
+    messageText.innerHTML = alertMessage;
     message.style.display = "flex";
     message.style.animationName = "slide-down";
-    setInterval(() => {message.style.animationName = "slide-up";}, 1500);
-    setInterval(() => {message.style.display = "none";}, 1900);
+    setInterval(() => {message.style.animationName = "slide-up";}, 1000);
+    setInterval(() => {message.style.display = "none";}, 1500);
 }
 
 function endGame() {
+    userHasGuessedCorrectly = true;
     console.log("You got it right!");
 }

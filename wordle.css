@@ -27,8 +27,15 @@ body {
     font-weight: bold;
     color: white;
     user-select: none;
+    animation-name: none;
+    animation-timing-function: ease-in;
+    animation-delay: 0s;
+    animation-duration: 0.5s;
 }
-
+@keyframes flip {
+    from {transform: rotateX(0deg);}
+    to {transform: rotateX(360deg);}
+}
 .square.correct {
     background-color: #198b3f;
     animation-name: flip;
@@ -155,7 +162,7 @@ body {
     border-radius: 10px;
     animation-name: none;
     animation-timing-function: ease-in;
-    animation-duration: 2s;
+    animation-duration: 0.5s;
 }
 
 #alert-fake-word-text {

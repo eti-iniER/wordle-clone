@@ -21,7 +21,7 @@ console.log(entire_word);
 
 let currentGuess = [];
 let currentRow = 1;
-
+let flipDelay = 0
 function writeLetter(letter) {
     /* Each letter key in the HTML page passes itself as a value to this function */
     if (currentRow < 7) {
@@ -51,7 +51,9 @@ function deleteLetter() {
     }
 }
 function submitGuess() {
+    let flipDelay = 0;
     if (userHasGuessedCorrectly == true) {
+        // Checks if the game has already been won
         return;
     }
     if (currentGuess.length == 5) {
@@ -71,16 +73,18 @@ function submitGuess() {
             // Iterates over all the squares in a guess row
             squareID = "boardrow" + currentRow + "square" + i;
             squareValue = document.getElementById(squareID).innerHTML;
+            
             if (squareValue == word[i-1]) {
                 // Checks if the value of the square matches the value's index in the word
-                document.getElementById(squareID).setAttribute("class", "square correct");
+                animateLetter(squareID, "square correct", flipDelay);
             } else if (word.includes(squareValue)) {
                 // Misplaced letter
-                document.getElementById(squareID).setAttribute("class", "square misplaced");
+                animateLetter(squareID, "square misplaced", flipDelay);
             } else {
-                document.getElementById(squareID).setAttribute("class", "square guessed");
-            }
+                animateLetter(squareID, "square guessed", flipDelay);
+            };
         }
+
         currentRow++;   // Begins guessing the next row
         if (currentGuess.toString() == word.toString()) {
             // Check if player has won the game
@@ -106,6 +110,15 @@ function showAlert(alertID, alertTextID, alertMessage) {
     message.style.animationName = "slide-down";
     setInterval(() => {message.style.animationName = "slide-up";}, 1500);
     setInterval(() => {message.style.display = "none";}, 2000);
+
+}
+
+function animateLetter(squareID, newClass) {
+    square = document.getElementById(squareID);
+    square.style.animationDelay = flipDelay + 'ms';
+    square.style.animationName = "flip";
+    flipDelay += 500;
+    square.setAttribute("class", newClass);
 }
 
 function endGame() {

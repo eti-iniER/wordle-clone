@@ -84,7 +84,7 @@ function submitGuess() {
             } else {
                 to_be_animated.push({id: squareID, delay: flipDelay, newClass: "square guessed"});
             };
-            flipDelay += 500;
+            flipDelay += 300;
         }
 
         for (let i=0; i < to_be_animated.length; i++) {
@@ -104,7 +104,9 @@ function submitGuess() {
         currentGuess = [];
         if (currentRow == 7) {
             if (userHasGuessedCorrectly == false) {
-                showAlert("alert-answer", "alert-answer-text", entire_word);
+                setTimeout(() => {
+                    showAlert("alert-answer", "alert-answer-text", entire_word);
+                }, 1500);
             } else {
                 endGame();
             };

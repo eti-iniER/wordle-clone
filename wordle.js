@@ -21,7 +21,7 @@ console.log(entire_word);
 
 let currentGuess = [];
 let currentRow = 1;
-let flipDelay = 0
+
 function writeLetter(letter) {
     /* Each letter key in the HTML page passes itself as a value to this function */
     if (currentRow < 7) {
@@ -52,6 +52,7 @@ function deleteLetter() {
 }
 function submitGuess() {
     let flipDelay = 0;
+    let to_be_animated = [];
     if (userHasGuessedCorrectly == true) {
         // Checks if the game has already been won
         return;
@@ -76,13 +77,22 @@ function submitGuess() {
             
             if (squareValue == word[i-1]) {
                 // Checks if the value of the square matches the value's index in the word
-                animateLetter(squareID, "square correct", flipDelay);
+                to_be_animated.push({id: squareID, delay: flipDelay, newClass: "square correct"});
             } else if (word.includes(squareValue)) {
                 // Misplaced letter
-                animateLetter(squareID, "square misplaced", flipDelay);
+                to_be_animated.push({id: squareID, delay: flipDelay, newClass: "square misplaced"});
             } else {
-                animateLetter(squareID, "square guessed", flipDelay);
+                to_be_animated.push({id: squareID, delay: flipDelay, newClass: "square guessed"});
             };
+            flipDelay += 500;
+        }
+
+        for (let i=0; i < to_be_animated.length; i++) {
+            let element = to_be_animated[i];
+            setTimeout(() => {
+                animateLetter(element["id"], element["delay"], element["newClass"]);
+                i++;
+            },element["delay"]);
         }
 
         currentRow++;   // Begins guessing the next row
@@ -97,10 +107,10 @@ function submitGuess() {
                 showAlert("alert-answer", "alert-answer-text", entire_word);
             } else {
                 endGame();
-            }
-        }
-    }
-}
+            };
+        };
+    };
+};
 
 function showAlert(alertID, alertTextID, alertMessage) {
     message = document.getElementById(alertID);
@@ -111,17 +121,15 @@ function showAlert(alertID, alertTextID, alertMessage) {
     setInterval(() => {message.style.animationName = "slide-up";}, 1500);
     setInterval(() => {message.style.display = "none";}, 2000);
 
-}
+};
 
-function animateLetter(squareID, newClass) {
+function animateLetter(squareID, delay, newClass) {
     square = document.getElementById(squareID);
-    square.style.animationDelay = flipDelay + 'ms';
     square.style.animationName = "flip";
-    flipDelay += 500;
     square.setAttribute("class", newClass);
-}
+};
 
 function endGame() {
     userHasGuessedCorrectly = true;
     console.log("You got it right!");
-}
+};

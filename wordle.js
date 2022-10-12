@@ -92,6 +92,10 @@ function submitGuess() {
             setTimeout(() => {
                 animateLetter(element["id"], element["delay"], element["newClass"]);
                 i++;
+                if (element["newClass"] == "square guessed") {
+                    squareValue = document.getElementById(element["id"]).innerHTML;
+                    document.getElementById(squareValue).setAttribute("class", "key faded");
+                    };
             },element["delay"]);
         }
 

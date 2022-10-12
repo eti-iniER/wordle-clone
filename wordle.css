@@ -59,7 +59,7 @@ body {
 .keyboard {
     display: flex;
     flex-direction: column;
-    margin-top: 50px;
+    margin-top: 30px;
     cursor: pointer;
     user-select: none;
 }

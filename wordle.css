@@ -175,3 +175,38 @@ body {
 #alert-fake-word-text {
     color: whitesmoke;
 }
+
+#victory-banner {
+    display: none;
+    position: fixed;
+    top: 20vh;
+    height: 50vh;
+    background: linear-gradient(180deg, #d3d3d3a4, #818181c2);
+    color: #1d1d1d;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px 5px #201e1e5e;
+    font-weight: bolder;
+}
+#victory-banner #reload-button {
+    width: max-content;
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    background-color: #1c9261;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#victory-banner #close-button {
+    width: max-content;
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    background-color: #e45835;
+    margin-top: 10px;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}

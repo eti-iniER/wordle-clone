@@ -21,6 +21,7 @@ console.log(entire_word);
 
 let currentGuess = [];
 let currentRow = 1;
+let flipDelay = 0
 
 function writeLetter(letter) {
     /* Each letter key in the HTML page passes itself as a value to this function */
@@ -137,5 +138,15 @@ function animateLetter(squareID, delay, newClass) {
 
 function endGame() {
     userHasGuessedCorrectly = true;
-    console.log("You got it right!");
+    banner = document.getElementById("victory-banner");
+    setTimeout(() => {
+        banner.style.display = "block";
+    }, flipDelay + 1000);
+    console.log("You won");
+    console.log(banner);
 };
+
+function closeVictoryBanner () {
+    banner = document.getElementById("victory-banner");
+    banner.style.display = "none";
+}

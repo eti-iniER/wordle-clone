@@ -85,6 +85,13 @@ body {
 .keyboard .row .key:active {
     background-color: darkgrey;
 }
+.keyboard .row .key.faded {
+    background-color: #1d1d1d;
+    color: grey;
+    border: 1px solid grey;
+    height: 53px;
+    width: 48px;
+}
 
 #keyboardrow4enter {
     background-color: #15688f;

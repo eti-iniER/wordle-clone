@@ -176,7 +176,7 @@ body {
     color: whitesmoke;
 }
 
-#victory-banner {
+.banner {
     display: none;
     position: fixed;
     top: 20vh;
@@ -188,7 +188,7 @@ body {
     box-shadow: 0px 0px 5px 5px #201e1e5e;
     font-weight: bolder;
 }
-#victory-banner #reload-button {
+.banner #reload-button {
     width: max-content;
     display: block;
     padding: 10px;
@@ -199,7 +199,7 @@ body {
     cursor: pointer;
 }
 
-#victory-banner #close-button {
+.banner #close-button {
     width: max-content;
     display: block;
     padding: 10px;

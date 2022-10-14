@@ -10,11 +10,17 @@
     <title>Wordle Clone</title>
 </head>
 <body>
-    <div id="victory-banner">
+    <div class="banner" id="victory-banner">
         <h2>You won Wordle!</h2>
         <p>Nice job! Do you want to play again?</p>
         <a id="reload-button" href="wordle.html">Yes, of course!</a>
-        <a id="close-button" onclick="closeVictoryBanner()">Nah, let me see my words</a>
+        <a id="close-button" onclick="closeBanner()">Nah, let me see my words</a>
+    </div>
+    <div class="banner" id="defeat-banner">
+        <h2>Sorry, you lost.</h2>
+        <p>Better luck next time. Try again?</p>
+        <a id="reload-button" href="wordle.html">Yes!</a>
+        <a id="close-button" onclick="closeBanner()">Nah, I'm a sore loser</a>
     </div>
     <div id="alert-answer">
         <h1 id="alert-answer-text"></h1>

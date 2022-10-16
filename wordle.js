@@ -116,7 +116,7 @@ function submitGuess() {
     currentRow++; // Begins guessing the next row
     if (currentGuess.toString() == word.toString()) {
       // Check if player has won the game
-      userHasGuessedCorrectly = True;
+      userHasGuessedCorrectly = true;
       endGame();
       return;
     }

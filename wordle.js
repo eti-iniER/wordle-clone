@@ -164,8 +164,8 @@ function endGame() {
 }
 
 function closeBanner() {
-  banner = document.getElementsByClassName("banner")
+  banner = document.getElementsByClassName("banner");
   for (b of banner) {
-    banner.style.display = "none";
+    b.style.display = "none";
   }
 }

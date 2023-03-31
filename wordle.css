@@ -248,8 +248,8 @@ body {
 
 @media only screen and (max-width: 768px) {
     .keyboard .row .key {
-        width: 22px;
-        height: 25px;
+        width: 25px;
+        height: 30px;
         font-size: 18px;
     }
 

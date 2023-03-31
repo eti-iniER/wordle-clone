@@ -50,23 +50,17 @@ body {
     background-color: #198b3f;
     animation-name: flip;
     animation-duration: 0.5s;
-    border: 0px !important;
-    height: 52px !important;
-    width: 52px !important;
+    border-color: #1980af;
 }
 
 .square.misplaced {
     background-color: #c7b02b;
-    border: 0px !important;
-    height: 52px !important;
-    width: 52px !important;
+    border-color: #c7b02b;
 }
 
 .square.guessed {
     background-color: #616161;
-    border: 0px !important;
-    height: 52px !important;
-    width: 52px !important;
+    border-color: #616161;
 }
 
 .keyboard {

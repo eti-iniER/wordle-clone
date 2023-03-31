@@ -23,6 +23,7 @@ body {
     border: 1px solid grey;
     height: 50px;
     text-align: center;
+    line-height: 50px;
     width: 50px;
     margin: 2px;
     font-size: 35px;
@@ -96,6 +97,7 @@ body {
     border-radius: 5px;
     margin: 2px;
     cursor: pointer;
+    border: 1px solid grey;
 }
 
 .keyboard .row .key:active {
@@ -106,12 +108,11 @@ body {
     background-color: #1d1d1d;
     color: grey;
     border: 1px solid grey;
-    height: 53px;
-    width: 48px;
 }
 
 #keyboardrow4enter {
     background-color: #15688f;
+    border: 1px solid #15688f;
     font-weight: bolder;
     width: 70px;
 }
@@ -122,6 +123,7 @@ body {
 
 #keyboardrow4delete {
     background-color: #b9492d;
+    border: 1px solid #b9492d;
     width: 70px;
 }
 
@@ -132,6 +134,7 @@ body {
 #keyboardrow4reload {
     text-decoration: none;
     background-color: #1c9261;
+    border: 1px solid #1c9261;
     font-weight: bolder;
     width: 70px;
 }

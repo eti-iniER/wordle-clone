@@ -253,9 +253,9 @@ body {
 
 @media only screen and (max-width: 768px) {
     .keyboard .row .key {
-        width: 25px;
-        height: 30px;
-        font-size: 18px;
+        width: 30px;
+        height: 35px;
+        font-size: 25px;
     }
 
     .attribution {

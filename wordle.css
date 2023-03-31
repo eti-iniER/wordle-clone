@@ -13,10 +13,12 @@ body {
     margin-top: 20px;
     flex-direction: column;
 }
+
 .board .row {
     display: flex;
     flex-direction: row;
 }
+
 .board .row .square {
     border: 1px solid grey;
     height: 50px;
@@ -32,10 +34,17 @@ body {
     animation-delay: 0s;
     animation-duration: 0.5s;
 }
+
 @keyframes flip {
-    from {transform: rotateX(0deg);}
-    to {transform: rotateX(360deg);}
+    from {
+        transform: rotateX(0deg);
+    }
+
+    to {
+        transform: rotateX(360deg);
+    }
 }
+
 .square.correct {
     background-color: #198b3f;
     animation-name: flip;
@@ -44,18 +53,21 @@ body {
     height: 52px !important;
     width: 52px !important;
 }
+
 .square.misplaced {
     background-color: #c7b02b;
     border: 0px !important;
     height: 52px !important;
     width: 52px !important;
 }
+
 .square.guessed {
     background-color: #616161;
     border: 0px !important;
     height: 52px !important;
     width: 52px !important;
 }
+
 .keyboard {
     display: flex;
     flex-direction: column;
@@ -63,12 +75,14 @@ body {
     cursor: pointer;
     user-select: none;
 }
+
 .keyboard .row {
     display: flex;
     flex-direction: row;
     justify-content: center;
 }
-.keyboard .row .key{
+
+.keyboard .row .key {
     color: #1d1d1d;
     background-color: grey;
     display: flex;
@@ -82,9 +96,11 @@ body {
     margin: 2px;
     cursor: pointer;
 }
+
 .keyboard .row .key:active {
     background-color: darkgrey;
 }
+
 .keyboard .row .key.faded {
     background-color: #1d1d1d;
     color: grey;
@@ -98,25 +114,31 @@ body {
     font-weight: bolder;
     width: 70px;
 }
+
 #keyboardrow4enter:active {
     background-color: #1980af;
 }
+
 #keyboardrow4delete {
     background-color: #b9492d;
     width: 70px;
 }
+
 #keyboardrow4delete:active {
     background-color: #e45835;
 }
+
 #keyboardrow4reload {
     text-decoration: none;
     background-color: #1c9261;
     font-weight: bolder;
     width: 70px;
 }
+
 #keyboardrow4reload:active {
     background-color: #29c785;
 }
+
 .attribution {
     position: fixed;
     color: lightgrey;
@@ -125,6 +147,7 @@ body {
     width: fit-content;
     line-height: 5px;
 }
+
 #alert-answer {
     display: none;
     position: absolute;
@@ -142,13 +165,23 @@ body {
 }
 
 @keyframes slide-down {
-    from {top: -100px;}
-    to {top: 30px;}
+    from {
+        top: -100px;
+    }
+
+    to {
+        top: 30px;
+    }
 }
 
 @keyframes slide-up {
-    from {top: 30px;}
-    to {top: -100px;}
+    from {
+        top: 30px;
+    }
+
+    to {
+        top: -100px;
+    }
 }
 
 #alert-answer-text {
@@ -188,6 +221,7 @@ body {
     box-shadow: 0px 0px 5px 5px #201e1e5e;
     font-weight: bolder;
 }
+
 .banner #reload-button {
     width: max-content;
     display: block;
@@ -209,4 +243,14 @@ body {
     color: white;
     border-radius: 5px;
     cursor: pointer;
+}
+
+/* Responsive styling. Added 31/03/23 by Eti-ini Effiong-Robert!*/
+
+@media only screen and (max-width: 768px) {
+    .keyboard .row .key {
+        width: 25px;
+        height: 30px;
+        font-size: 20px;
+    }
 }

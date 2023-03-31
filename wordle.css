@@ -72,12 +72,14 @@ body {
 }
 
 .keyboard .row {
+    user-select: none;
     display: flex;
     flex-direction: row;
     justify-content: center;
 }
 
 .keyboard .row .key {
+    user-select: none;
     color: #1d1d1d;
     background-color: grey;
     display: flex;

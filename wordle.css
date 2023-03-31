@@ -257,6 +257,7 @@ body {
     .attribution {
         font-size: 12px;
         margin: auto;
+        z-index: -1;
     }
 
     #keyboardrow4enter,

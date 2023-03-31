@@ -146,6 +146,7 @@ body {
     right: 20px;
     width: fit-content;
     line-height: 5px;
+    z-index: -1;
 }
 
 #alert-answer {

@@ -24,7 +24,6 @@ body {
     height: 50px;
     width: 50px;
     margin: 2px;
-    text-align: center;
     font-size: 35px;
     font-weight: bold;
     color: white;
@@ -249,8 +248,19 @@ body {
 
 @media only screen and (max-width: 768px) {
     .keyboard .row .key {
-        width: 20px;
+        width: 22px;
         height: 25px;
-        font-size: 15px;
+        font-size: 18px;
+    }
+
+    .attribution {
+        font-size: 12px;
+        margin: auto;
+    }
+
+    #keyboardrow4enter,
+    #keyboardrow4delete,
+    #keyboardrow4reload {
+        width: 40px;
     }
 }

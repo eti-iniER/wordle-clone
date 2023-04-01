@@ -69,9 +69,11 @@ body {
     margin-top: 30px;
     cursor: pointer;
     user-select: none;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .keyboard .row {
+    -webkit-tap-highlight-color: transparent;
     user-select: none;
     display: flex;
     flex-direction: row;
@@ -79,6 +81,7 @@ body {
 }
 
 .keyboard .row .key {
+    -webkit-tap-highlight-color: transparent;
     user-select: none;
     color: #1d1d1d;
     background-color: grey;

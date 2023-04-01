@@ -65,11 +65,20 @@ function submitGuess() {
       guessedWord += letter;
     }
     console.log(guessedWord);
-    // if (!possible_words.includes(guessedWord)) {
-    //     // check if word is valid
-    //     showAlert("alert-fake-word", "alert-fake-word-text", "That word isn't real!");
-    //     return;
+
+
+    // // === API practice here! =======
+
+    // async function getDefinition(word_to_be_defined) {
+    //   const url = `https://api.dictionaryapi.dev/api/v2/entries/en/${word_to_be_defined}`;
+    //   const response = await fetch(url);
+    //   const definition = await response.json();
+    //   return definition;
     // }
+
+    // console.log("We called the API and is the word real?: ")
+    // console.log(getDefinition(guessedWord));
+    // ==============================
     for (let i = 1; i < 6; i++) {
       // Iterates over all the squares in a guess row
       squareID = "boardrow" + currentRow + "square" + i;

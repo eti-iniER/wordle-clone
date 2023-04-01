@@ -72,6 +72,10 @@ body {
     -webkit-tap-highlight-color: transparent;
 }
 
+.keyboard:focus {
+    outline: none !important;
+}
+
 .keyboard .row {
     -webkit-tap-highlight-color: transparent;
     user-select: none;

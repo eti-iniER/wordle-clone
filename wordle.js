@@ -16,11 +16,28 @@ window.addEventListener("keydown", (event) => {
     writeLetter(event.key.toUpperCase());
   }
 });
-console.log(entire_word);
 
 let currentGuess = [];
 let currentRow = 1;
 let flipDelay = 0;
+
+async function getDefinition(enteredWord) {
+  let url = `https://api.dictionaryapi.dev/api/v2/entries/en/${enteredWord}`;
+  try {
+    const response = await fetch(url);
+    return response.json();
+  } catch (error) {
+    return {};
+  }
+}
+
+async function validateWord(enteredWord) {
+  const wordDefinition = await getDefinition(enteredWord);
+  if (wordDefinition[0] && wordDefinition[0].hasOwnProperty("word")) {
+    return true;
+  }
+  return false;
+}
 
 function writeLetter(letter) {
   /* Each letter key in the HTML page passes itself as a value to this function */
@@ -50,7 +67,7 @@ function deleteLetter() {
     document.getElementById(squareID).innerHTML = "";
   }
 }
-function submitGuess() {
+async function submitGuess() {
   let flipDelay = 0;
   let to_be_animated = [];
   if (userHasGuessedCorrectly == true) {
@@ -64,21 +81,16 @@ function submitGuess() {
       // Helper loop to form guess array into strings
       guessedWord += letter;
     }
-    console.log(guessedWord);
 
+    // API shenanigans!!
+    let valid = await validateWord(guessedWord);
+    // ===============
 
-    // // === API practice here! =======
+    if (!valid) {
+      showAlert("alert-fake-word", "alert-fake-word-text", "Not a word!");
+      return;
+    }
 
-    // async function getDefinition(word_to_be_defined) {
-    //   const url = `https://api.dictionaryapi.dev/api/v2/entries/en/${word_to_be_defined}`;
-    //   const response = await fetch(url);
-    //   const definition = await response.json();
-    //   return definition;
-    // }
-
-    // console.log("We called the API and is the word real?: ")
-    // console.log(getDefinition(guessedWord));
-    // ==============================
     for (let i = 1; i < 6; i++) {
       // Iterates over all the squares in a guess row
       squareID = "boardrow" + currentRow + "square" + i;

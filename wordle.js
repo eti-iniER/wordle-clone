@@ -5,9 +5,6 @@ let word = Array.from(entire_word);
 let userHasGuessedCorrectly = false;
 LETTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
-word = Array.from("CAGEY");
-console.log(word);
-
 window.addEventListener("keydown", (event) => {
   if (event.key == "Enter") {
     submitGuess();

@@ -90,6 +90,24 @@ async function submitGuess() {
       showAlert("alert-fake-word", "alert-fake-word-text", "Not a word!");
       return;
     }
+    
+    // CODE to only register each letter the number of times it occurs
+    letter_freq = {}
+    well_placed = {}
+    for (let char of word) {
+      if (letter_freq.hasOwnProperty(char)) {
+        letter_freq[char]++;
+      } else {
+        letter_freq[char] = 1;
+        well_placed[char] = false;
+      }
+    }
+
+    for (let i = 0; i < guessedWord.length; i++) {
+      if (guessedWord[i] == word[i]) {
+        well_placed[word[i]] = true;
+      }
+    };
 
     for (let i = 1; i < 6; i++) {
       // Iterates over all the squares in a guess row
@@ -103,13 +121,15 @@ async function submitGuess() {
           delay: flipDelay,
           newClass: "square correct",
         });
-      } else if (word.includes(squareValue)) {
+        letter_freq[squareValue] --;
+      } else if (word.includes(squareValue) && letter_freq[squareValue] > 0 && well_placed[squareValue] != true) {
         // Misplaced letter
         to_be_animated.push({
           id: squareID,
           delay: flipDelay,
           newClass: "square misplaced",
         });
+        letter_freq[squareValue]--;
       } else {
         to_be_animated.push({
           id: squareID,
@@ -149,6 +169,7 @@ async function submitGuess() {
         }, 1500);
       }
       endGame();
+      return;
     }
   }
 }

@@ -5,6 +5,9 @@ let word = Array.from(entire_word);
 let userHasGuessedCorrectly = false;
 LETTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
+word = Array.from("CAGEY");
+console.log(word);
+
 window.addEventListener("keydown", (event) => {
   if (event.key == "Enter") {
     submitGuess();
@@ -33,7 +36,7 @@ async function getDefinition(enteredWord) {
 
 async function validateWord(enteredWord) {
   const wordDefinition = await getDefinition(enteredWord);
-  if (wordDefinition[0] && wordDefinition[0].hasOwnProperty("word")) {
+  if ((wordDefinition[0] && wordDefinition[0].hasOwnProperty("word")) || possible_words.includes(enteredWord)) {
     return true;
   }
   return false;
@@ -122,7 +125,8 @@ async function submitGuess() {
           newClass: "square correct",
         });
         letter_freq[squareValue] --;
-      } else if (word.includes(squareValue) && letter_freq[squareValue] > 0 && well_placed[squareValue] != true) {
+      } else if (word.includes(squareValue) && letter_freq[squareValue] > 0 
+      && (well_placed[squareValue] == false || letter_freq[squareValue] > 1)) {
         // Misplaced letter
         to_be_animated.push({
           id: squareID,

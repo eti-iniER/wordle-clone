@@ -146,7 +146,7 @@ async function submitGuess() {
       setTimeout(() => {
         animateLetter(element["id"], element["delay"], element["newClass"]);
         i++;
-        if (element["newClass"] == "square guessed") {
+        if ((element["newClass"] == "square guessed") && word.includes(squareValue) == false) {
           squareValue = document.getElementById(element["id"]).innerHTML;
           document
             .getElementById(squareValue)
